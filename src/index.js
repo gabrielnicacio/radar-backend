@@ -10,8 +10,8 @@ mongoose.connect("mongodb+srv://gabrielnicacio:gabriel110999@cluster0-ncnuu.mong
 })
 
 app.use(cors());
+app.use(express.json())
 app.use(routes);
-app.use(express.json( ))
 app.get('/', (req, res) => {
     return res.json({ message: 'Hello World' });
 });

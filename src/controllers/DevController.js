@@ -3,7 +3,7 @@ const Dev = require('../models/Dev');
 const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
-  async indexedDB(req, res) {
+  async index(req, res) {
     const devs = await Dev.find();
 
     return res.json(devs);
