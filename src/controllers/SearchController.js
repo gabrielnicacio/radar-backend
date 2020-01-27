@@ -4,7 +4,7 @@ module.exports = {
   //busca todos devs num raio de 10km
   //filtrar por tecnologias
   async index(req, res) {
-    const { latitude, longitude, techs } = req.body;
+    const { latitude, longitude, techs } = req.query;
 
     const techsArray = parseStringAsArray(techs);
 
@@ -16,7 +16,7 @@ module.exports = {
         $near: {
           $geometry: {
             type: 'Point',
-            coordinates: [longitude, latitude],
+            coordinates: [latitude, longitude],
           },
           $maxDistance: 10000,
         }
